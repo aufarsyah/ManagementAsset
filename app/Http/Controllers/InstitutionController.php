@@ -36,11 +36,12 @@ class InstitutionController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$name		 = $request->name;
-		$location	 = $request->location;
-		$coordinate	 = $request->coordinate;
-		$description = $request->description;
-		$message     = '';
+		$name		 			= $request->name;
+		$institution_type_id	= $request->institution_type_id;
+		$location	 			= $request->location;
+		$coordinate	 			= $request->coordinate;
+		$description 			= $request->description;
+		$message     			= '';
 
 		try {
 
@@ -54,10 +55,11 @@ class InstitutionController extends Controller
 			} else {
 
 				$create_data = Institution::create([
-					'name'        => $name,
-					'location'    => $location,
-					'coordinate'  => $coordinate,
-					'description' => $description
+					'name'        			=> $name,
+					'institution_type_id'   => $institution_type_id,
+					'location'    			=> $location,
+					'coordinate'  			=> $coordinate,
+					'description' 			=> $description
 				]);
 
 				if ($create_data) {
@@ -93,11 +95,19 @@ class InstitutionController extends Controller
 	{
 		if ($id == 'all') {
 			
-			$select_data = Institution::get();
+			$select_data = Institution::select(
+                            'institution.*', 
+                            'institution_type.id as institution_type_id',
+                            'institution_type.name as institution_type_name')
+                        ->join('institution_type', 'institution_type.id', '=', 'institution_type_id')->get();
 		}
 		else{
 
-			$select_data = Institution::find($id)->get();
+			$select_data = Institution::find($id)->get();$select_data = Institution::select(
+                            'institution.*', 
+                            'institution_type.name as type_name')
+                        ->join('institution_type', 'institution_type.id', '=', 'institution_type_id')
+                        ->where('institution.id', '=', $id)->get();
 		}
 
 		return response($select_data);
@@ -137,11 +147,12 @@ class InstitutionController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		$name        = $request->name;
-		$location	 = $request->location;
-		$coordinate	 = $request->coordinate;
-		$description = $request->description;
-		$message     = '';
+		$name		 			= $request->name;
+		$institution_type_id	= $request->institution_type_id;
+		$location	 			= $request->location;
+		$coordinate	 			= $request->coordinate;
+		$description 			= $request->description;
+		$message     			= '';
 
 		try {
 
@@ -161,10 +172,11 @@ class InstitutionController extends Controller
 			}
 
 			$update_data = Institution::where('id', $id)->update([
-				'name'        => $name,
-				'location'    => $location,
-				'coordinate'  => $coordinate,
-				'description' => $description
+				'name'        			=> $name,
+				'institution_type_id'   => $institution_type_id,
+				'location'    			=> $location,
+				'coordinate'  			=> $coordinate,
+				'description' 			=> $description
 			]);
 
 			if ($update_data) {

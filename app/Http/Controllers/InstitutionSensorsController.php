@@ -113,7 +113,16 @@ class InstitutionSensorsController extends Controller
         }
         else{
 
-            $select_data = TranInstitutionSensors::find($id)->get();
+            $select_data = TranInstitutionSensors::select(
+                            'tran_institution_sensors.*', 
+                            'institution.name as institution_name', 
+                            'institution.location as institution_location', 
+                            'institution.coordinate as coordinate', 
+                            'sensors.name as sensors_name')
+                        ->join('institution', 'institution.id', '=', 'institution_id')
+                        ->join('sensors', 'sensors.id', '=', 'sensors_id')
+                        ->where('institution_type_id', $id)
+                        ->get();
         }
 
         return response($select_data);

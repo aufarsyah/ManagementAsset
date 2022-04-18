@@ -458,6 +458,8 @@
 			initTable();
 			initSelectGroup();
 
+			$(".select2-selection__rendered").css("color", "black");
+
 
             $('#btn_user_add').click(function() {
 

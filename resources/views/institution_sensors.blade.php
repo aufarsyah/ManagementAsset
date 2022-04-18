@@ -85,7 +85,7 @@
     	<!--end::Post-->
     </div>
 
-    <div class="modal fade" tabindex="-1" id="modal_area">
+    <div class="modal fade" id="modal_area">
         <div class="modal-dialog" style="max-width: 700px;">
             <div class="modal-content">
                 <div class="modal-header">

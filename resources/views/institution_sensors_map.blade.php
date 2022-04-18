@@ -180,6 +180,23 @@
 					<div class="card-body p-0">
 						<!--begin::Wrapper-->
 						<div class="card-px py-10">
+							<div class="row mb-5">
+								<div class="col-4 d-flex align-items-center">
+									<div class="me-5">
+										<span class="fw-bolder text-dark fs-6 text-nowrap">Select Type</span>
+									</div>
+									<select id="select_type" class="form-select form-select-lg" data-control="select2" data-allow-clear="true" data-placeholder="Select an option" >
+	                                	<option value="all" selected>All</option>
+	                            	</select>
+	                            	
+								</div>
+								<div class="col-8 d-flex align-items-center position-relative">
+									<div class="position-absolute end-0 fw-bolder text-dark fs-6 text-nowrap pe-5">
+										<span class="text-primary" id="total_markers">100</span>
+										<span>Markers</span>
+									</div>
+								</div>
+							</div>
 							<div id="map"></div>
 						</div>
 					</div>
@@ -219,6 +236,26 @@
 			},
 			buttonsStyling: false
 		});	
+
+		function initSelectType() {
+
+            var select = $('#select_type');
+
+            $.ajax({
+                dataType: 'JSON',
+                type: 'GET',
+                url: '/institution_type/all',
+                success: function (data) {
+
+                    $.each(data, function (index, item) {
+                        select.append($('<option>', { 
+                            value: item.id,
+                            text : item.name 
+                        }));
+                    });
+                }
+            });
+        }   
 
 		function initCharts() {
 
@@ -455,16 +492,21 @@
 			}).addTo(map);
 		}
 
-		function initMapMarkers(){
+		function initMapMarkers(type){
+
+
+			$(".leaflet-marker-icon").remove();
+			$(".leaflet-marker-shadow").remove();
+			$(".leaflet-popup").remove();
 
 			$.ajax({
 				dataType: 'JSON',
 				type: 'GET',
-				url: '/institution_sensors/all',
+				url: '/institution_sensors/'+ type,
 				success: function (data) {
 
 					//console.log(data);
-					
+					$('#total_markers').text(data.length);
 
 					for (var i = 0; i < data.length; i++) {
 
@@ -496,7 +538,13 @@
 
 			initCharts();
 			initMap();
-			initMapMarkers();
+			initMapMarkers('all');
+			initSelectType();
+
+			$('#select_type').on('select2:select', function (e) {
+			  	
+				initMapMarkers($(this).val());
+			});
 		});
 		
 	</script>

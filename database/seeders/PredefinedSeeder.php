@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\InstitutionType;
 use App\Models\Institution;
 use App\Models\Sensors;
 use App\Models\TranInstitutionSensors;
@@ -28,2238 +29,2633 @@ class PredefinedSeeder extends Seeder
 
         // $data_privilege->save();
         // $privilege_id = $data_privilege->id;
+
+        //inserting institution type
+        $data_institution_type = [
+        [
+            "name" => 'K/L'
+        ],
+        [
+            "name" => 'KBRI'
+        ],
+        [
+            "name" => 'KPU Pusat'
+        ],
+        [
+            "name" => 'KPUD'
+        ],
+        [
+            "name" => 'Pemda'
+        ],
+        [
+            "name" => 'CIA'
+        ]];   
+
+        InstitutionType::insert($data_institution_type);   
          
 
         //inserting institution
         $data_institution = [
         [
             'name' => 'Kementerian Dalam Negeri',
+            'institution_type_id' => 1,
             'coordinate' => '-6.170507740261105, 106.82773946819282',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kementerian ATR-BPN',
+            'institution_type_id' => 1,
             'coordinate' => '-6.1856534542044255, 106.82480894187255',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kementerian Pariwisata dan Ekonomi Kreatif',
+            'institution_type_id' => 1,
             'coordinate' => '-6.179032331954567, 106.82160032588044',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kementerian Pendidikan dan Kebudayaan',
+            'institution_type_id' => 1,
             'coordinate' => '-6.225332577407092, 106.80261422252667',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kemenko PMK',
+            'institution_type_id' => 1,
             'coordinate' => '-6.172288462485868, 106.82244977005587',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kementerian Perhubungan',
+            'institution_type_id' => 1,
             'coordinate' => '-6.1741943639167545, 106.82225196821011',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kementerian PUPR',
+            'institution_type_id' => 1,
             'coordinate' => '-6.237172927663409, 106.80192742403506',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
-            'name' => 'Kementarian PPA',
+            'name' => 'Kementerian PPA',
+            'institution_type_id' => 1,
             'coordinate' => '-6.178461632197639, 106.82121498355063',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Kemenko Maritim dan Investasi',
+            'institution_type_id' => 1,
             'coordinate' => '-6.184708334964276, 106.82273955286983',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Lembaga Administrasi Negara',
+            'institution_type_id' => 1,
             'coordinate' => '-6.201689672719892, 106.80661345471565',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Badan Nasional Penanggulangan Terorisme',
+            'institution_type_id' => 1,
             'coordinate' => '-6.517317097761564, 106.87431254351961',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'BKKBN',
+            'institution_type_id' => 1,
             'coordinate' => '-6.237447520189781, 106.87807750564524',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Ombudsman',
+            'institution_type_id' => 1,
             'coordinate' => '-6.219027121754333, 106.83192369704555',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Komisi Pemilihan Umum',
+            'institution_type_id' => 3,
             'coordinate' => '-6.197812330034401, 106.82780364891921',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Dewan Perwakilan Rakyat',
+            'institution_type_id' => 1,
             'coordinate' => '-6.209664098801186, 106.80003661511721',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Dewan Perwakilan Daerah',
+            'institution_type_id' => 1,
             'coordinate' => '-6.208059249846761, 106.80003939704542',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
-            'name' => 'KBRI Australia',
+            'name' => 'KBRI Australia', 
+            'institution_type_id' => 2,
             'coordinate' => '-35.30375684136404, 149.11666037055042',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI China',
+            'institution_type_id' => 2,
             'coordinate' => '39.94147389903389, 116.44810006884185',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Papua Nugini',
+            'institution_type_id' => 2,
             'coordinate' => '-9.433649289503629, 147.1918808735932',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Jerman',
+            'institution_type_id' => 2,
             'coordinate' => '52.52943219404731, 13.363255572330557',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Arab Saudi',
+            'institution_type_id' => 2,
             'coordinate' => '24.68169643579396, 46.62450491628028',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Yordania',
+            'institution_type_id' => 2,
             'coordinate' => '31.94750926149184, 35.87394394610568',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Oman',
+            'institution_type_id' => 2,
             'coordinate' => '23.59681745561638, 58.43417424892726',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KDEI Taiwan',
+            'institution_type_id' => 2,
             'coordinate' => '25.079788996115013, 121.56693922994151',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Belanda',
+            'institution_type_id' => 2,
             'coordinate' => '52.08614092443111, 4.288724561308946',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Malaysia',
+            'institution_type_id' => 2,
             'coordinate' => '3.146792897154829, 101.7218490940336',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Amerika Serikat',
+            'institution_type_id' => 2,
             'coordinate' => '38.910271638777054, -77.04628113960801',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Mesir',
+            'institution_type_id' => 2,
             'coordinate' => '30.034884402397687, 31.23101928381776',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Thailand',
+            'institution_type_id' => 2,
             'coordinate' => '13.751274082753195, 100.53655242289118',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Filipina',
+            'institution_type_id' => 2,
             'coordinate' => '14.631587495355651, 120.95233280099234',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Singapura',
+            'institution_type_id' => 2,
             'coordinate' => '1.2993020113997658, 103.82275226732429',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Vietnam',
+            'institution_type_id' => 2,
             'coordinate' => '21.021007856630717, 105.8534970679462',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Afganistan',
+            'institution_type_id' => 2,
             'coordinate' => '34.530802786748445, 69.17899461173441',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Rusia',
+            'institution_type_id' => 2,
             'coordinate' => '55.738031965378006, 37.630209929109476',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Pakistan',
+            'institution_type_id' => 2,
             'coordinate' => '33.72245939438508, 73.10387570622397',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI India',
+            'institution_type_id' => 2,
             'coordinate' => '28.60204732604317, 77.19446998197222',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Turki',
+            'institution_type_id' => 2,
             'coordinate' => '39.87017847128933, 32.85580536496218',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Inggris',
+            'institution_type_id' => 2,
             'coordinate' => '51.49695393587146, -0.13094490149028612',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KBRI Korea Selatan',
+            'institution_type_id' => 2,
             'coordinate' => '37.51850159389236, 126.93159227430192',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KJRI Los Angeles',
+            'institution_type_id' => 2,
             'coordinate' => '34.062049554900895, -118.29935462837825',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KJRI Sydney',
+            'institution_type_id' => 2,
             'coordinate' => '-33.942147388186605, 151.244634668503',
             'location' => 'overseas',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Badung',
+            'institution_type_id' => 4,
             'coordinate' => '-8.61789767130842, 115.18862465671651',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kota Denpasar',
+            'institution_type_id' => 4,
             'coordinate' => '-8.673462741625045, 115.23540860704388',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Bengkulu Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-3.4402984232063845, 102.19188497291937',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Bengkulu Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-3.7038246671301533, 102.41365056576957',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Rejang Lebong',
+            'institution_type_id' => 4,
             'coordinate' => '-3.476452740243076, 102.51724660942612',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Bantul',
+            'institution_type_id' => 4,
             'coordinate' => '-7.899746077091716, 110.3218096642546',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Sleman',
+            'institution_type_id' => 4,
             'coordinate' => '-7.718858194880274, 110.35980859519586',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Bandung',
+            'institution_type_id' => 4,
             'coordinate' => '-7.035136767959557, 107.53995148841969',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Indramayu',
+            'institution_type_id' => 4,
             'coordinate' => '-6.3538145765177525, 108.32598957450435',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Merangin',
+            'institution_type_id' => 4,
             'coordinate' => '-2.0878443993455567, 102.25499039664439',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Tanjung Jabung Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-0.8269194763226856, 103.46313145050662',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Tanjung Jabung Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-1.2121392642326063, 103.7940855817891',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kota Jambi',
+            'institution_type_id' => 4,
             'coordinate' => '-1.6176406386749036, 103.55388175938144',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kota Semarang',
+            'institution_type_id' => 4,
             'coordinate' => '-6.983120941168859, 110.41006221593963',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kota Surakarta',
+            'institution_type_id' => 4,
             'coordinate' => '-7.547034796943664, 110.80857665511643',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Lamongan',
+            'institution_type_id' => 4,
             'coordinate' => '-7.119734931495684, 112.4048953123289',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Malang',
+            'institution_type_id' => 4,
             'coordinate' => '-8.138573759091418, 112.57312881566355',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Mojokerto',
+            'institution_type_id' => 4,
             'coordinate' => '-7.489965759874696, 112.42797638182026',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Pacitan',
+            'institution_type_id' => 4,
             'coordinate' => '-8.190827149009916, 111.10188219152789',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Sidoarjo',
+            'institution_type_id' => 4,
             'coordinate' => '-7.442752709921801, 112.68638014466913',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kota Tanjung Pinang',
+            'institution_type_id' => 4,
             'coordinate' => '0.9110876123446534, 104.49382150377751',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Lampung Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-4.89730596626066, 105.036708321077',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Bengkalis',
+            'institution_type_id' => 4,
             'coordinate' => '1.482762350451252, 102.13059335675189',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Kepuluan Meranti',
+            'institution_type_id' => 4,
             'coordinate' => '1.0018408639273504, 102.72830394637582',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Pesisir Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-1.343489989249854, 100.57931603449791',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Tanah Datar',
+            'institution_type_id' => 4,
             'coordinate' => '-0.47734264240321284, 100.624744086073',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kota Padang',
+            'institution_type_id' => 4,
             'coordinate' => '-0.8891433909998778, 100.40035831709844',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD Kab Oga Komering Ulu',
+            'institution_type_id' => 4,
             'coordinate' => '-4.144662438392883, 104.18006761992126',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bali Kab Bangli',
+            'institution_type_id' => 4,
             'coordinate' => '-8.453798821018298, 115.34925543060427',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bali Kab Jembrana',
+            'institution_type_id' => 4,
             'coordinate' => '-8.355858504407472, 114.6164108528759',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bali Kab Karangasem',
+            'institution_type_id' => 4,
             'coordinate' => '-8.451779190651946, 115.6166469300768',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bali Kab Tabanan',
+            'institution_type_id' => 4,
             'coordinate' => '-8.537012964926992, 115.13530014381065',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Banten Kab Pandeglang',
+            'institution_type_id' => 4,
             'coordinate' => '-6.3088375147460924, 106.10007676581516',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Banten Kab Serang',
+            'institution_type_id' => 4,
             'coordinate' => '-6.111539856883916, 106.15762760071107',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Banten Kota Cilegon',
+            'institution_type_id' => 4,
             'coordinate' => '-6.036176899705537, 106.04962925230127',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Banten Kota Tangerang Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-6.328413472275218, 106.67348799040117',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Provinsi Bengkulu',
+            'institution_type_id' => 4,
             'coordinate' => '-3.8309024241604597, 102.29516905559757',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Kab Kaur',
+            'institution_type_id' => 4,
             'coordinate' => '-4.759793099762848, 103.3505972315801',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Kabupaten Kepahiang',
+            'institution_type_id' => 4,
             'coordinate' => '-3.62228222045471, 102.56106456974858',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Kab Lebong',
+            'institution_type_id' => 4,
             'coordinate' => '-3.1553529468293604, 102.18298304719653',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Kab Muko-Muko',
+            'institution_type_id' => 4,
             'coordinate' => '-2.5504208911397703, 101.10528158878729',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Kab Seluma',
+            'institution_type_id' => 4,
             'coordinate' => '-4.076356879946475, 102.57369749593141',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Bengkulu Kota Bengkulu',
+            'institution_type_id' => 4,
             'coordinate' => '-3.7614029739684147, 102.30588928159516',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - DIY Kab Gunungkidul',
+            'institution_type_id' => 4,
             'coordinate' => '-7.9401924953502325, 110.59346260124106',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Barat Kab Cianjur',
+            'institution_type_id' => 4,
             'coordinate' => '-6.818397624510454, 107.13856122015876',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Barat Kab Karawang',
+            'institution_type_id' => 4,
             'coordinate' => '-6.274901545041905, 107.27522698513015',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Barat Kab Pangandaran',
+            'institution_type_id' => 4,
             'coordinate' => '-7.365721976542905, 108.21556911677916',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Barat Kab Sukabumi',
+            'institution_type_id' => 4,
             'coordinate' => '-6.894346562946412, 106.7885453042793',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Barat Kab Tasikmalaya',
+            'institution_type_id' => 4,
             'coordinate' => '-7.3469723282728605, 108.12203276357675',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Barat Kota Depok',
+            'institution_type_id' => 4,
             'coordinate' => '-6.371365681995414, 106.83279268331883',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jambi Kab Batanghari',
+            'institution_type_id' => 4,
             'coordinate' => '-1.7180916612463037, 103.2647413736582',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jambi Kab Bungo',
+            'institution_type_id' => 4,
             'coordinate' => '-1.4920207520110806, 102.11758248480845',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jambi Kab Kerinci',
+            'institution_type_id' => 4,
             'coordinate' => '-2.0564504148235083, 101.38853102442374',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jambi Kab Tebo',
+            'institution_type_id' => 4,
             'coordinate' => '-1.468254291977072, 102.44008288714241',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jambi Kota Sungai Penuh',
+            'institution_type_id' => 4,
             'coordinate' => '-2.071007692938732, 101.40158865743486',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Blora',
+            'institution_type_id' => 4,
             'coordinate' => '-6.971478431328726, 111.40969011384696',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Boyolali',
+            'institution_type_id' => 4,
             'coordinate' => '-7.544059815682174, 110.60112333266456',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Demak',
+            'institution_type_id' => 4,
             'coordinate' => '-6.896009024624285, 110.63929842111345',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Grobogan',
+            'institution_type_id' => 4,
             'coordinate' => '-7.083344933306173, 110.9167682658494',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Kebumen',
+            'institution_type_id' => 4,
             'coordinate' => '-7.66865330101137, 109.66842275625072',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Kendal',
+            'institution_type_id' => 4,
             'coordinate' => '-6.92191175297584, 110.19613419911053',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Klaten',
+            'institution_type_id' => 4,
             'coordinate' => '-7.692128586757274, 110.60111667940922',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Pekalongan',
+            'institution_type_id' => 4,
             'coordinate' => '-7.029344235372035, 109.59885734018485',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Pemalang',
+            'institution_type_id' => 4,
             'coordinate' => '-6.902226690926411, 109.38354956120153',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Purworejo',
+            'institution_type_id' => 4,
             'coordinate' => '-7.716030599346096, 110.00865245585882',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Purbalingga',
+            'institution_type_id' => 4,
             'coordinate' => '-7.380981619544849, 109.38209159582699',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Rembang',
+            'institution_type_id' => 4,
             'coordinate' => '-6.722469590000012, 111.34819118632474',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Semarang',
+            'institution_type_id' => 4,
             'coordinate' => '-7.129404153435225, 110.40892694793108',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Sragen',
+            'institution_type_id' => 4,
             'coordinate' => '-7.416919869156529, 111.02819428769803',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Sukoharjo',
+            'institution_type_id' => 4,
             'coordinate' => '-7.687857060091064, 110.83156177212136',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Wonogiri',
+            'institution_type_id' => 4,
             'coordinate' => '-7.806920336358905, 110.91230273503557',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kab Wonosobo',
+            'institution_type_id' => 4,
             'coordinate' => '-7.357252921150389, 109.90570285719397',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kota Magelang',
+            'institution_type_id' => 4,
             'coordinate' => '-7.483368023993509, 110.21417768641078',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Tengah Kota Pekalongan',
+            'institution_type_id' => 4,
             'coordinate' => '-6.895307326140664, 109.66024809444471',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Banyuwangi',
+            'institution_type_id' => 4,
             'coordinate' => '-8.228247355157604, 114.36089471329014',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Blitar',
+            'institution_type_id' => 4,
             'coordinate' => '-8.072912492058952, 112.22188511168903',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Gresik',
+            'institution_type_id' => 4,
             'coordinate' => '-7.166025505314054, 112.61136529609333',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Jember',
+            'institution_type_id' => 4,
             'coordinate' => '-8.16518834988088, 113.71244443796188',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Kediri',
+            'institution_type_id' => 4,
             'coordinate' => '-7.80741111435855, 112.04204835821199',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Ngawi',
+            'institution_type_id' => 4,
             'coordinate' => '-7.392216084733088, 111.45153692560159',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Ponorogo',
+            'institution_type_id' => 4,
             'coordinate' => '-7.84920223435007, 111.47374234722677',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Sitobondo',
+            'institution_type_id' => 4,
             'coordinate' => '-7.710885516246102, 114.00688721772693',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Sumenep',
+            'institution_type_id' => 4,
             'coordinate' => '-7.001423189992407, 113.84702385256135',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Trenggalek',
+            'institution_type_id' => 4,
             'coordinate' => '-8.055914095397222, 111.68915488980159',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kab Tuban',
+            'institution_type_id' => 4,
             'coordinate' => '-6.898480955848191, 112.04550538711972',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kota Blitar',
+            'institution_type_id' => 4,
             'coordinate' => '-8.094434053296167, 112.19130599215488',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kota Pasuruan',
+            'institution_type_id' => 4,
             'coordinate' => '-7.656720974771961, 112.89732861498678',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Jawa Timur Kota Surabaya',
+            'institution_type_id' => 4,
             'coordinate' => '-7.292959805660645, 112.72940187631869',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Riau Kota Batam',
+            'institution_type_id' => 4,
             'coordinate' => '1.1294788769883908, 103.92497613430984',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kab Lampung Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-5.72564877594357, 105.59202302985462',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kab Lampung Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-5.053495830035851, 105.50516311522422',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kab Pesisir Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-5.2026093258647785, 103.94162795839225',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kab Pesawaran',
+            'institution_type_id' => 4,
             'coordinate' => '-5.366641116378198, 105.15010224609571',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kab Way Kanan',
+            'institution_type_id' => 4,
             'coordinate' => '-4.504512045352449, 104.51369071428417',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kota Bandar Lampung',
+            'institution_type_id' => 4,
             'coordinate' => '-5.385715646366647, 105.3036329013891',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Lampung Kota Metro',
+            'institution_type_id' => 4,
             'coordinate' => '-5.128176191811174, 105.3069354503199',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Riau Kab Indragiri Hulu',
+            'institution_type_id' => 4,
             'coordinate' => '-0.38245735578510043, 102.44233836585683',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Riau Kab Kuantan Singingi',
+            'institution_type_id' => 4,
             'coordinate' => '-0.5319483899812548, 101.5828947261887',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Riau Kab Rokan Hilir',
+            'institution_type_id' => 4,
             'coordinate' => '2.117873462435101, 100.82224114184339',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Riau Kab Rokan Hulu',
+            'institution_type_id' => 4,
             'coordinate' => '0.8658772705349067, 100.29592625986157',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Riau Kab Siak',
+            'institution_type_id' => 4,
             'coordinate' => '0.8150130372567892, 102.02269304111303',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Riau Kota Dumai',
+            'institution_type_id' => 4,
             'coordinate' => '1.6064761645470256, 101.3887260855771',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kota Tomohon',
+            'institution_type_id' => 4,
             'coordinate' => '1.336495732704816, 124.83655304941394',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Prov Sumatera Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-0.9161404950576596, 100.35703653510811',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Agam',
+            'institution_type_id' => 4,
             'coordinate' => '-0.3954603977604488, 100.27551621850107',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Dharmasraya',
+            'institution_type_id' => 4,
             'coordinate' => '-0.9539212579446129, 101.49348158727092',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Kepulauan Mentawai',
+            'institution_type_id' => 4,
             'coordinate' => '-2.0662912406952074, 99.59468722567175',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Lima Puluh Kota',
+            'institution_type_id' => 4,
             'coordinate' => '-0.1834621927702017, 100.6559841349023',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Pasaman',
+            'institution_type_id' => 4,
             'coordinate' => '0.13971911435906972, 100.16595676217219',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Pasaman Barat',
+            'institution_type_id' => 4,
             'coordinate' => '0.10743779211911401, 99.82932932028346',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Sijunjung',
+            'institution_type_id' => 4,
             'coordinate' => '-0.6625556804437956, 100.92633172946353',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Solok',
+            'institution_type_id' => 4,
             'coordinate' => '-0.8301658311634421, 100.65326202060832',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Solok Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-1.5602749547726376, 101.23366813874568',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kab Bukit Tinggi',
+            'institution_type_id' => 4,
             'coordinate' => '-0.30266429728267386, 100.3696955227787',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kota Padang Panjang',
+            'institution_type_id' => 4,
             'coordinate' => '-0.46683003364809916, 100.40926498767561',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kota Solok',
+            'institution_type_id' => 4,
             'coordinate' => '-0.7683998449620932, 100.65624185753926',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Barat Kota Sawah Lunto',
+            'institution_type_id' => 4,
             'coordinate' => '-0.6456482801684749, 100.7455044170267',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Selatan Kab Musi Rawas',
+            'institution_type_id' => 4,
             'coordinate' => '-3.2427777202714823, 103.03815078871034',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Selatan Kab Musi Rawas Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-2.814732745413356, 102.83367780630043',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Selatan Kab Ogan ilir',
+            'institution_type_id' => 4,
             'coordinate' => '-3.393093041015603, 104.83018856399943',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Selatan Kab Panungkal Abab Lematang Hilir',
+            'institution_type_id' => 4,
             'coordinate' => '-3.2878910811571123, 103.84174243110107',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Bangka Belitung Kab Bangka Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-3.0100711006928162, 106.47691768360045',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Bangka Belitung Kab Bangka Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-2.518833778346143, 106.41711193917735',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Bangka Belitung Kab Belitung Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-2.8841959203122713, 108.23693756635973',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Gorontalo Kab Bone Bolango',
+            'institution_type_id' => 4,
             'coordinate' => '0.5495895777190639, 123.14000489924346',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Gorontalo Kab Gorontalo',
+            'institution_type_id' => 4,
             'coordinate' => '0.6292725127414015, 122.9749723596326',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Barat Kab Melawi',
+            'institution_type_id' => 4,
             'coordinate' => '-0.37608696335924674, 111.76765095986627',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Barat Kab Sambas',
+            'institution_type_id' => 4,
             'coordinate' => '1.3622712333065883, 109.30347068401731',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Barat Kab Sekadau',
+            'institution_type_id' => 4,
             'coordinate' => '0.00965480775099986, 110.95528049610495',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Balangan',
+            'institution_type_id' => 4,
             'coordinate' => '-2.374105316122864, 115.46523003597481',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Banjar',
+            'institution_type_id' => 4,
             'coordinate' => '-3.4195432950989018, 114.85107153103772',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Barito Kuala',
+            'institution_type_id' => 4,
             'coordinate' => '-2.9827706136703207, 114.73484172398355',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Hulu Sungai Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-2.579650172115521, 115.38453510073379',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Hulu Sungai Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-2.41848412924932, 115.25323133129405',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Kota Baru',
+            'institution_type_id' => 4,
             'coordinate' => '-3.2568509167621156, 116.2096285275035',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Tabalong',
+            'institution_type_id' => 4,
             'coordinate' => '-2.1719406749510854, 115.4051541998033',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Tanah Bumbu',
+            'institution_type_id' => 4,
             'coordinate' => '-3.4850235139809587, 115.9544673642482',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Tanah Laut',
+            'institution_type_id' => 4,
             'coordinate' => '-3.80186953773342, 114.78477029574267',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Tapin',
+            'institution_type_id' => 4,
             'coordinate' => '-2.930670946741869, 115.16954289480717',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kota Banjarmasin',
+            'institution_type_id' => 4,
             'coordinate' => '-3.2892816911756944, 114.58823945629989',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kota Banjar Baru',
+            'institution_type_id' => 4,
             'coordinate' => '-3.4626604912345815, 114.81463531558092',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Barito Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-1.7229879770732037, 114.84035025858499',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Barito Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-2.114064153941744, 115.16804194936151',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Barito Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-0.9482125927034977, 114.89963150704124',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Gunung Mas',
+            'institution_type_id' => 4,
             'coordinate' => '-1.1247017677032511, 113.8576433991661',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Murung Raya',
+            'institution_type_id' => 4,
             'coordinate' => '-0.6261024325993976, 114.55795896720461',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Seruyan',
+            'institution_type_id' => 4,
             'coordinate' => '-3.407381920977105, 112.54587586676573',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Sukamara',
+            'institution_type_id' => 4,
             'coordinate' => '-2.762529025541832, 111.1786984126961',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kota Palangkaraya',
+            'institution_type_id' => 4,
             'coordinate' => '-2.1960436184955796, 113.89839450926586',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kab Kutai Kartanegara',
+            'institution_type_id' => 4,
             'coordinate' => '-0.450949956608571, 117.00115615530844',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kab Kutai Timur',
+            'institution_type_id' => 4,
             'coordinate' => '0.5136895548236432, 117.59848907017822',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kab Mahakam Hulu',
+            'institution_type_id' => 4,
             'coordinate' => '0.5469178601814478, 115.20958528777427',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kota Balikpapan',
+            'institution_type_id' => 4,
             'coordinate' => '-1.2769183507953712, 116.8096508928459',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kota Samarinda',
+            'institution_type_id' => 4,
             'coordinate' => '-0.4836158019110913, 117.1298916982436',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Utara Kab Bulungan',
+            'institution_type_id' => 4,
             'coordinate' => '2.8402705662823164, 117.37312085662853',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Utara Kab Nunukan',
+            'institution_type_id' => 4,
             'coordinate' => '4.143090557825058, 117.65005629194856',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Utara Kab Tana Tidung',
+            'institution_type_id' => 4,
             'coordinate' => '3.607639958284492, 116.9026628388186',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Utara Kota Tarakan',
+            'institution_type_id' => 4,
             'coordinate' => '3.3079742711835847, 117.61278409532191',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Riau Kab Karimun',
+            'institution_type_id' => 4,
             'coordinate' => '1.0183026029633517, 103.4059620025761',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Riau Kab Kepulauan Anambas',
+            'institution_type_id' => 4,
             'coordinate' => '3.222989505018984, 106.21233506802935',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Maluku Utara Kota Ternate',
+            'institution_type_id' => 4,
             'coordinate' => '0.7691592357524818, 127.36164920728585',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kab Bima',
+            'institution_type_id' => 4,
             'coordinate' => '-8.515559095779174, 118.69877663533293',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kab Dompu',
+            'institution_type_id' => 4,
             'coordinate' => '-8.537779326550705, 118.4659454924247',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kab Lombok Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-8.321275672893448, 116.19859280943007',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kab Sumbawa',
+            'institution_type_id' => 4,
             'coordinate' => '-8.47716893145099, 117.4058844547264',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kab Sumbawa Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-8.774390231921792, 116.82504473821086',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kota Mataram',
+            'institution_type_id' => 4,
             'coordinate' => '-8.619811427347662, 116.08757149500863',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Belu',
+            'institution_type_id' => 4,
             'coordinate' => '-9.105547811213786, 124.87522118066163',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Manggarai',
+            'institution_type_id' => 4,
             'coordinate' => '-8.622024555785812, 120.45157634326048',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Manggarai Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-8.494787420446217, 119.89701318722217',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Ngada',
+            'institution_type_id' => 4,
             'coordinate' => '-8.788135314238477, 120.97260621318613',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Sabu Raijua',
+            'institution_type_id' => 4,
             'coordinate' => '-10.470598851166681, 121.85341260743532',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Sumba Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-9.624017353206696, 119.38989717606462',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Sumba Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-9.661006633994626, 120.26312572782183',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Timor Tengah Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-9.455456769955617, 124.47541738323278',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Papua Barat Kab Raja Ampat',
+            'institution_type_id' => 4,
             'coordinate' => '-0.41857319469955606, 130.83210338958267',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Papua Barat Kab Teluk Bintuni',
+            'institution_type_id' => 4,
             'coordinate' => '-2.126779710799196, 133.59466778532587',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Papua Barat Kab Manokwari',
+            'institution_type_id' => 4,
             'coordinate' => '-0.864641312871739, 134.07530356167186',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Barat Kab Majene',
+            'institution_type_id' => 4,
             'coordinate' => '-3.559689486232474, 118.94354430143497',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Barat Kab Mamuju',
+            'institution_type_id' => 4,
             'coordinate' => '-2.6829224144517965, 118.86502622167565',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Barat Kab Pasangkayu',
+            'institution_type_id' => 4,
             'coordinate' => '-1.1919943355410751, 119.33935424890855',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Gowa',
+            'institution_type_id' => 4,
             'coordinate' => '-5.205466942375495, 119.45177307107244',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Kepulauan Selayar',
+            'institution_type_id' => 4,
             'coordinate' => '-6.118560040499549, 120.46641716311584',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Luwu Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-2.6146313605381817, 121.12130239985699',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Maros',
+            'institution_type_id' => 4,
             'coordinate' => '-5.018248325527061, 119.57444616853576',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Pangkajene dan Kepulauan',
+            'institution_type_id' => 4,
             'coordinate' => '-4.837347826451776, 119.54450629941098',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Toraja Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-2.9750991394512325, 119.9029602690553',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kota Makassar',
+            'institution_type_id' => 4,
             'coordinate' => '-5.168653549273983, 119.48780206218052',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kab Bolaang Mongondow Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '0.381714180707805, 123.98275607399201',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Provinsi Sulawesi Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-0.8890640539401431, 119.87946468727087',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Banggai Kepulauan',
+            'institution_type_id' => 4,
             'coordinate' => '-1.3195537321592175, 123.29072007145378',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Banggai Laut',
+            'institution_type_id' => 4,
             'coordinate' => '-1.6027251298410827, 123.49892781479129',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Buol',
+            'institution_type_id' => 4,
             'coordinate' => '1.1904394161449148, 121.41893903836099',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Donggala',
+            'institution_type_id' => 4,
             'coordinate' => '-0.677982379479097, 119.74895833386559',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Konawe Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-3.851068104791619, 122.04365931296047',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Poso',
+            'institution_type_id' => 4,
             'coordinate' => '-1.3970330965662714, 120.75475566628855',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Tolitoli',
+            'institution_type_id' => 4,
             'coordinate' => '1.045262067858983, 120.81832294074972',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kab Kepulauan Talaud',
+            'institution_type_id' => 4,
             'coordinate' => '4.006849811541861, 126.68411743528101',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kab Minahasa Utara',
+            'institution_type_id' => 4,
             'coordinate' => '1.4184980307399624, 124.99070753371609',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kab Minahasa Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '1.1822215901425386, 124.5689560030047',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kab Minahasa Tenggara',
+            'institution_type_id' => 4,
             'coordinate' => '1.040317120295301, 124.79412974833762',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kota Bitung',
+            'institution_type_id' => 4,
             'coordinate' => '1.434919742447398, 125.11620474530112',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kota Kotamobagu',
+            'institution_type_id' => 4,
             'coordinate' => '0.7357728846311122, 124.31585769740839',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kota Manado',
+            'institution_type_id' => 4,
             'coordinate' => '1.4823932549345806, 124.84642520720061',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Provinsi Sumatera Utara',
+            'institution_type_id' => 4,
             'coordinate' => '3.5991168590741762, 98.68318739561049',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Asahan',
+            'institution_type_id' => 4,
             'coordinate' => '2.980947452792489, 99.62305383879149',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Humbang Hasundutan',
+            'institution_type_id' => 4,
             'coordinate' => '2.2881641036343563, 98.71342207274948',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Karo',
+            'institution_type_id' => 4,
             'coordinate' => '3.0979812450898083, 98.4952038893418',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Labuhan Batu',
+            'institution_type_id' => 4,
             'coordinate' => '2.112971566243998, 99.82392423242945',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Labuhan Batu Utara',
+            'institution_type_id' => 4,
             'coordinate' => '2.1128723785501435, 99.8240218305936',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Mandailing Natal',
+            'institution_type_id' => 4,
             'coordinate' => '0.8648605122614252, 99.56295895313023',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Nias',
+            'institution_type_id' => 4,
             'coordinate' => '1.115947404899558, 97.72338277504251',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Nias Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '0.564423233215125, 97.8188313113323',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Pakpak Bharat',
+            'institution_type_id' => 4,
             'coordinate' => '2.4543239318755834, 98.28695285493458',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Samosir',
+            'institution_type_id' => 4,
             'coordinate' => '2.5781396023344505, 98.7135560121007',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Serdang Bedagai',
+            'institution_type_id' => 4,
             'coordinate' => '3.508883083889492, 99.10664961762714',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Toba Samosir',
+            'institution_type_id' => 4,
             'coordinate' => '2.3271219279290527, 99.05138290646437',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Tapanuli Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '1.5390780641693562, 99.29795190221859',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kota Binjai',
+            'institution_type_id' => 4,
             'coordinate' => '3.6032068083263544, 98.47826558493728',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kota Gunungsitoli',
+            'institution_type_id' => 4,
             'coordinate' => '1.2562347273172905, 97.62174649309007',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kota Medan',
+            'institution_type_id' => 4,
             'coordinate' => '3.586800790658883, 98.6688832657899',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kota Sibolga',
+            'institution_type_id' => 4,
             'coordinate' => '1.7439712926967867, 98.77569569500493',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kota Tanjung Balai',
+            'institution_type_id' => 4,
             'coordinate' => '2.950677646773822, 99.78489796028774',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Bangka Belitung Kab Bangka Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-2.062415087782552, 105.16714172266464',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Gorontalo Kab Pahuwato',
+            'institution_type_id' => 4,
             'coordinate' => '0.4588978628441422, 121.9547673849106',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Provinsi Kalimantan Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-0.04006370454946799, 109.33280899918121',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Barat Kab Kapuas Hulu',
+            'institution_type_id' => 4,
             'coordinate' => '0.8872650559007754, 112.92848127969424',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Barat Kab Ketapang',
+            'institution_type_id' => 4,
             'coordinate' => '-1.8317439111841693, 109.97889871996193',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Barat Kab Sintang',
+            'institution_type_id' => 4,
             'coordinate' => '0.06370409401594823, 111.49756799205886',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Selatan Kab Hulu Sungai Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '-2.8079656385772, 115.25876918145096',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Kapuas',
+            'institution_type_id' => 4,
             'coordinate' => '-3.0160575372698535, 114.38475515519008',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Katingan',
+            'institution_type_id' => 4,
             'coordinate' => '-1.8759848447966663, 113.40972090259812',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Kota Waringin Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-2.7074847649946676, 111.64678581857046',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Kota Waringin Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-2.540161549142073, 112.94922818654506',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Lamandau',
+            'institution_type_id' => 4,
             'coordinate' => '-2.1883387495308364, 111.43078915051736',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Tengah Kab Pulang Pisau',
+            'institution_type_id' => 4,
             'coordinate' => '-2.7297568688046527, 114.26907056092337',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kab Berau',
+            'institution_type_id' => 4,
             'coordinate' => '2.1538700749518864, 117.49593295688007',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kab Kutai Barat',
+            'institution_type_id' => 4,
             'coordinate' => '-0.23094892809452636, 115.7038845895359',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kab Paser',
+            'institution_type_id' => 4,
             'coordinate' => '-1.9062251565792974, 116.19063219872424',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Timur Kota Bontang',
+            'institution_type_id' => 4,
             'coordinate' => '0.13794262556275008, 117.49804264832947',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kalimantan Utara Kab Malinau',
+            'institution_type_id' => 4,
             'coordinate' => '3.553328370252759, 116.62488104825053',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Kepulauan Riau Kab Lingga',
+            'institution_type_id' => 4,
             'coordinate' => '-0.20944196420758399, 104.60158302829362',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Barat Kab Lombok Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-8.703338106521354, 116.26706483823709',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Nusa Tenggara Timur Kab Malaka',
+            'institution_type_id' => 4,
             'coordinate' => '-9.557697232009563, 124.9088242870388',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Papua Kab Merauke',
+            'institution_type_id' => 4,
             'coordinate' => '-8.510958722525922, 140.40733024406845',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Papua Barat Kab Sorong',
+            'institution_type_id' => 4,
             'coordinate' => '-0.975656510643348, 131.34326523409342',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Papua Barat Kota Sorong',
+            'institution_type_id' => 4,
             'coordinate' => '-0.8940854469695355, 131.33207180371673',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Barat Kab Mamuju Tengah',
+            'institution_type_id' => 4,
             'coordinate' => '-2.049869793156196, 119.26530216509882',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Barru',
+            'institution_type_id' => 4,
             'coordinate' => '-4.436419973199611, 119.64990754844528',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Bulukumba',
+            'institution_type_id' => 4,
             'coordinate' => '-5.557345435488132, 120.19493529450853',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Luwu Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-2.5497436182893933, 120.34414397011172',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Soppeng',
+            'institution_type_id' => 4,
             'coordinate' => '-4.366868787735181, 119.8967933105999',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Selatan Kab Tana Toraja',
+            'institution_type_id' => 4,
             'coordinate' => '-3.0958657027708676, 119.85240588006785',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Banggai',
+            'institution_type_id' => 4,
             'coordinate' => '-0.9856977632471443, 122.78397104536367',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Kolaka Timur',
+            'institution_type_id' => 4,
             'coordinate' => '-4.05674699031366, 121.88929609474484',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Morowali',
+            'institution_type_id' => 4,
             'coordinate' => '-2.472078893828035, 121.92032721812323',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Morowali Utara',
+            'institution_type_id' => 4,
             'coordinate' => '-1.9806409805963332, 121.33787044716814',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Parigi Moutong',
+            'institution_type_id' => 4,
             'coordinate' => '-0.7983785616545453, 120.15864915590222',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Sigi',
+            'institution_type_id' => 4,
             'coordinate' => '-1.0353593626630087, 119.88622163013088',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kab Wakatobi',
+            'institution_type_id' => 4,
             'coordinate' => '-5.30900748710212, 123.53490867689995',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Tengah Kota Palu',
+            'institution_type_id' => 4,
             'coordinate' => '-0.900844973128285, 119.89079399629527',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Provinsi Sulawesi Utara',
+            'institution_type_id' => 4,
             'coordinate' => '1.486481759042543, 124.84200125449597',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sulawesi Utara Kab Minahasa',
+            'institution_type_id' => 4,
             'coordinate' => '1.3153667081073628, 124.91401619484076',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Labuhan Batu Selatan',
+            'institution_type_id' => 4,
             'coordinate' => '1.907437215444325, 100.08946602700733',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Nias Barat',
+            'institution_type_id' => 4,
             'coordinate' => '1.002728765878661, 97.49548431873907',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kab Simalungun',
+            'institution_type_id' => 4,
             'coordinate' => '2.9585080775792605, 98.86128142828068',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'KPUD - Sumatera Utara Kota Pematang Siantar',
+            'institution_type_id' => 4,
             'coordinate' => '2.9513106410978263, 99.06294678131891',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Badung',
+            'institution_type_id' => 5,
             'coordinate' => '-8.59772303203932, 115.2389115302524',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Gianyar',
+            'institution_type_id' => 5,
             'coordinate' => '-8.541130888265343, 115.32395781522739',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Madiun',
+            'institution_type_id' => 5,
             'coordinate' => '-7.54131338851482, 111.6533364315491',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Palopo',
+            'institution_type_id' => 5,
             'coordinate' => '-3.008074101664951, 120.20133334766642',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Bogor',
+            'institution_type_id' => 5,
             'coordinate' => '-6.479263561612056, 106.82489613146419',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Bojonegoro',
+            'institution_type_id' => 5,
             'coordinate' => '-7.1502384536447146, 111.88142704615755',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Jombang',
+            'institution_type_id' => 5,
             'coordinate' => '-7.556716475696028, 112.23443796364874',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Lebak',
+            'institution_type_id' => 5,
             'coordinate' => '-6.361025058576828, 106.2461791170512',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Lumajang',
+            'institution_type_id' => 5,
             'coordinate' => '-8.133480160185492, 113.22464503062538',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Magetan',
+            'institution_type_id' => 5,
             'coordinate' => '-7.656361263138224, 111.32924540788478',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Tangerang',
+            'institution_type_id' => 5,
             'coordinate' => '-6.269993335819631, 106.48443398778574',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Batu',
+            'institution_type_id' => 5,
             'coordinate' => '-7.866336552420464, 112.51269142511958',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Bekasi',
+            'institution_type_id' => 5,
             'coordinate' => '-6.235896757454134, 106.99507946965655',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Bogor',
+            'institution_type_id' => 5,
             'coordinate' => '-6.595379007406247, 106.79409895010741',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Kediri',
+            'institution_type_id' => 5,
             'coordinate' => '-7.812452510534252, 112.01432049373025',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Mojokerto',
+            'institution_type_id' => 5,
             'coordinate' => '-7.470178467459516, 112.44043476379629',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Pandeglang',
+            'institution_type_id' => 5,
             'coordinate' => '-6.309735209105018, 106.10492201789604',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Aceh Timur',
+            'institution_type_id' => 5,
             'coordinate' => '4.927513441847617, 97.7875961096287',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Anambas',
+            'institution_type_id' => 5,
             'coordinate' => '3.2148245690829294, 106.24869030293512',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Bangka',
+            'institution_type_id' => 5,
             'coordinate' => '-1.8875553765768074, 106.1045790511288',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Belitung',
+            'institution_type_id' => 5,
             'coordinate' => '-2.742628353854155, 107.65443118888696',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Gianyat',
+            'institution_type_id' => 5,
             'coordinate' => '-8.541130615066471, 115.32396846657069',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Jambi Kota',
+            'institution_type_id' => 5,
             'coordinate' => '-1.629157897079901, 103.60817214547745',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Batang Hari',
+            'institution_type_id' => 5,
             'coordinate' => '-1.7138761653966967, 103.26163168162871',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Buol',
+            'institution_type_id' => 5,
             'coordinate' => '1.1687920864158468, 121.4097162685908',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Kotawaringin Timur',
+            'institution_type_id' => 5,
             'coordinate' => '-2.537717225558183, 112.94098783090982',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Pasuruan',
+            'institution_type_id' => 5,
             'coordinate' => '-7.649215775189858, 112.90535986516817',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Sinjai',
+            'institution_type_id' => 5,
             'coordinate' => '-5.120161894953764, 120.23540703319367',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Sumba Barat',
+            'institution_type_id' => 5,
             'coordinate' => '-9.647339074977554, 119.39400346123351',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Trenggalek',
+            'institution_type_id' => 5,
             'coordinate' => '-8.048903352628349, 111.71057098949048',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Binjai',
+            'institution_type_id' => 5,
             'coordinate' => '3.6029886732226415, 98.48319709866844',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Lamongan',
+            'institution_type_id' => 5,
             'coordinate' => '-7.121318948177164, 112.41537211403218',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Langsa',
+            'institution_type_id' => 5,
             'coordinate' => '4.4691595393186265, 97.96641960777114',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Manado',
+            'institution_type_id' => 5,
             'coordinate' => '1.4843215814966486, 124.84919284282213',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Pangkalpinang',
+            'institution_type_id' => 5,
             'coordinate' => '-2.141011441129344, 106.11589194409542',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Seluma',
+            'institution_type_id' => 5,
             'coordinate' => '-4.077639576033073, 102.55628172217173',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Solok Selatan',
+            'institution_type_id' => 5,
             'coordinate' => '-1.5564983140550552, 101.23952379017696',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Tulungagung',
+            'institution_type_id' => 5,
             'coordinate' => '-8.066175350988608, 111.90271116147385',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Probolinggo',
+            'institution_type_id' => 5,
             'coordinate' => '-7.753994627902731, 113.21426817293788',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Sukabumi',
+            'institution_type_id' => 5,
             'coordinate' => '-6.989075960408222, 106.5507673503508',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Halmahera Utara',
+            'institution_type_id' => 5,
             'coordinate' => '1.7281474481278476, 127.99218771628247',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Malang',
+            'institution_type_id' => 5,
             'coordinate' => '-7.978074999999997, 112.63388358199592',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Tangerang',
+            'institution_type_id' => 5,
             'coordinate' => '-6.170851541358616, 106.64031321589437',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Bolaang Mongondow',
+            'institution_type_id' => 5,
             'coordinate' => '0.870315783006351, 124.02442511377761',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Gorontalo',
+            'institution_type_id' => 5,
             'coordinate' => '0.5318817393908114, 123.05951624090983',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Jembrana',
+            'institution_type_id' => 5,
             'coordinate' => '-8.35667371263834, 114.63676767753815',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Bekasi',
+            'institution_type_id' => 5,
             'coordinate' => '-6.366215460607897, 107.17289591418384',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Bolaang Mongondow Timur',
+            'institution_type_id' => 5,
             'coordinate' => '0.768299307661041, 124.61322839103502',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Fakfak',
+            'institution_type_id' => 5,
             'coordinate' => '-2.928886603543296, 132.29363221567124',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Malang',
+            'institution_type_id' => 5,
             'coordinate' => '-8.141509074361487, 112.57074573716129',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Sigi',
+            'institution_type_id' => 5,
             'coordinate' => '-1.057791983972709, 119.95389765122682',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Batam',
+            'institution_type_id' => 5,
             'coordinate' => '1.1276684116867068, 104.05547190717229',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Kotamobagu',
+            'institution_type_id' => 5,
             'coordinate' => '0.7429935925258819, 124.31261019667899',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Maluku Tengah',
+            'institution_type_id' => 5,
             'coordinate' => '-3.3042896892874167, 128.95410329083376',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Musi Rawas Utara',
+            'institution_type_id' => 5,
             'coordinate' => '-2.7353653216373965, 102.9015563058943',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Pacitan',
+            'institution_type_id' => 5,
             'coordinate' => '-8.192869384595848, 111.10351060196643',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Ponorogo',
+            'institution_type_id' => 5,
             'coordinate' => '-7.8699940022586725, 111.46275541098862',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kota Semarang',
+            'institution_type_id' => 5,
             'coordinate' => '-6.982161815406367, 110.4127245728375',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Situbondo',
+            'institution_type_id' => 5,
             'coordinate' => '-7.707570483401502, 114.00173071612727',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Subang',
+            'institution_type_id' => 5,
             'coordinate' => '-6.571544998162861, 107.76239643161809',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Sungai Penuh',
+            'institution_type_id' => 5,
             'coordinate' => '-2.070930199097722, 101.39608446006353',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Tanah Datar',
+            'institution_type_id' => 5,
             'coordinate' => '-0.4744678930871217, 100.62345606469515',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Tana Toraja',
+            'institution_type_id' => 5,
             'coordinate' => '-3.0867377969572325, 119.85702729619587',
             'location' => 'domestic',
             'description' => 'Test'
         ],
         [
             'name' => 'Pemerintah Kabupaten Kepahiang',
+            'institution_type_id' => 5,
             'coordinate' => '-3.6252659283313013, 102.5562558009763',
             'location' => 'domestic',
             'description' => 'Test'
@@ -2317,7 +2713,7 @@ class PredefinedSeeder extends Seeder
         $institution_id = Institution::where('name', 'Kementerian PUPR')->first()->id;
         $insert = TranInstitutionSensors::create(['institution_id' => $institution_id,'sensors_id' => $sensors_id_forcepoint]);
 
-        $institution_id = Institution::where('name', 'Kementarian PPA')->first()->id;
+        $institution_id = Institution::where('name', 'Kementerian PPA')->first()->id;
         $insert = TranInstitutionSensors::create(['institution_id' => $institution_id,'sensors_id' => $sensors_id_forcepoint]);
 
         $institution_id = Institution::where('name', 'Kemenko Maritim dan Investasi')->first()->id;

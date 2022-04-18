@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Institution extends Model
+class InstitutionType extends Model
 {
     use HasFactory;
 
-    public $table = "institution";
+    public $table = "institution_type";
 
     public $timestamps = false;
 
@@ -20,9 +20,5 @@ class Institution extends Model
      */
     protected $fillable = [
         'name',
-        'institution_type_id',
-        'location',
-        'coordinate',
-        'description',
     ];
 }

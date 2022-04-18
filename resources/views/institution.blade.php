@@ -63,7 +63,8 @@
     							    <thead>
     							        <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
                                             <th class="d-none"></th>
-    							            <th class="">Name</th>
+                                            <th class="">Name</th>
+    							            <th class="">Type</th>
                                             <th class="">Location</th>
                                             <th class="d-none"></th>
     							            <th class="d-none"></th>
@@ -85,7 +86,7 @@
     	<!--end::Post-->
     </div>
 
-    <div class="modal fade" tabindex="-1" id="modal_area">
+    <div class="modal fade" id="modal_area">
         <div class="modal-dialog" style="max-width: 700px;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -109,6 +110,12 @@
                     		<label class="form-label fw-bolder text-dark fs-6">Name</label>
                     		<input class="form-control form-control-lg form-control-solid" type="text" placeholder="input name" name="name" autocomplete="off" id="name" maxlength="20" />
                     	</div>
+                        <div class="fv-row mb-7">
+                            <label class="form-label fw-bolder text-dark fs-6">Select Type</label>
+                            <select id="select_type" class="form-select form-select-lg" data-control="select2" data-allow-clear="true" data-placeholder="Select an option" >
+                                <option value="" selected disabled></option>
+                            </select>
+                        </div>
                         <div class="fv-row mb-7">
                             <div>   
                                 <label class="form-label fw-bolder text-dark fs-6">Location</label>
@@ -203,7 +210,28 @@
                             ">"
                         });
 
-		function initTable()
+		
+        function initSelectType() {
+
+            var select = $('#select_type');
+
+            $.ajax({
+                dataType: 'JSON',
+                type: 'GET',
+                url: '/institution_type/all',
+                success: function (data) {
+
+                    $.each(data, function (index, item) {
+                        select.append($('<option>', { 
+                            value: item.id,
+                            text : item.name 
+                        }));
+                    });
+                }
+            });
+        }   
+
+        function initTable()
 	    {
             table.destroy();
 
@@ -240,16 +268,19 @@
 
 	                for (var i = 0; i < data.length; i++) {
 
-                        var id          = data[i].id;
-	                  	var name      	= data[i].name;
-                        var location    = data[i].location;
-                        var coordinate  = data[i].coordinate;
-	                  	var description = data[i].description;
+                        var id                      = data[i].id;
+                        var name                    = data[i].name;
+                        var institution_type_id     = data[i].institution_type_id;
+	                  	var institution_type_name   = data[i].institution_type_name;
+                        var location                = data[i].location;
+                        var coordinate              = data[i].coordinate;
+	                  	var description             = data[i].description;
 
 	                    var element =
 	                        //'<td>'+ (i + 1) +'</td>' +
                             '<td data-id="'+id+'" class="d-none"></td>' +
-	                        '<td data-name="'+name+'">'+name+'</td>' +
+                            '<td data-name="'+name+'">'+name+'</td>' +
+	                        '<td data-institution_type_id="'+institution_type_id+'">'+institution_type_name+'</td>' +
                             '<td data-location="'+location+'">'+location+'</td>' +
 	                        '<td data-coordinate="'+coordinate+'" class="d-none">'+coordinate+'</td>' +
                             '<td data-description="'+description+'" class="d-none">'+description+'</td>';
@@ -294,6 +325,8 @@
 
             	if($(this).data('id')) $('#institution_id').val($(this).data('id'));
                 if($(this).data('name')) $('#name').val($(this).data('name'));
+
+                if($(this).data('institution_type_id')) $('#select_type').val($(this).data('institution_type_id')).change();
                 
                 if($(this).data('location') == 'domestic'){
                     $("#domestic").attr('checked', true);
@@ -383,7 +416,10 @@
 		$(document).ready(function() {
 
 			initTable();
+            initSelectType();
             //initMap();
+
+            $(".select2-selection__rendered").css("color", "black");
 
 
             $('#btn_add').click(function() {
@@ -396,6 +432,8 @@
                 $(".domestic").removeClass('active');
                 $(".overseas").removeClass('active');
                 $(".domestic").addClass('active');
+
+                $("#select_type").val("").change();
             });
 		});
 
@@ -478,9 +516,10 @@
                             submitButton.disabled = false;
 
                             var formData = new FormData($('#form_data')[0]);
+                            var institution_type_id = $('#select_type').val();
                             var institution_id = $('#institution_id').val();
 
-                            formData.append('institution_id', institution_id);
+                            formData.append('institution_type_id', institution_type_id);
 
                             for(var pair of formData.entries()) {
                                 //console.log(pair[0]+ ', '+ pair[1]);

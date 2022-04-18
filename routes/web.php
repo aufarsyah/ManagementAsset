@@ -14,6 +14,7 @@ use App\Http\Controllers\AuditTrailController;
 use App\Http\Controllers\InstitutionController;
 use App\Http\Controllers\SensorsController;
 use App\Http\Controllers\InstitutionSensorsController;
+use App\Http\Controllers\InstitutionTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,9 @@ Route::middleware(['checkSession', 'auditTrail'])->group(function () {
 
     Route::resource('/privilege',               PrivilegeController::class);
     Route::get('/privilege/option/{id}',        [PrivilegeController::class, 'option']);
+
+    Route::resource('/institution_type',        InstitutionTypeController::class);
+    Route::get('/institution_type/option/{id}', [InstitutionTypeController::class, 'option']);
     
     Route::get('/user/option/{id}',             [UserController::class, 'option']);
 
