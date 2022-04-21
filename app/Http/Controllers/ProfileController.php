@@ -113,8 +113,6 @@ class ProfileController extends Controller
         $birth_of_date   = $request->birth_of_date;
         $address         = $request->address;
         $group_id        = $request->group_id;
-        $area_id         = $request->area_id;
-        $division_id     = $request->division_id;
         $password        = $request->password;
         $message         = '';
 
@@ -146,8 +144,6 @@ class ProfileController extends Controller
                 'phone'             => $phone,
                 'birth_of_date'     => $birth_of_date,
                 'address'           => $address,
-                'area_id'           => $area_id,
-                'division_id'       => $division_id,
                 'group_id'          => $group_id,
                 'password'          => Hash::make($password)
             ]);
@@ -177,8 +173,6 @@ class ProfileController extends Controller
         $birth_of_date  = $request->birth_of_date;
         $address        = $request->address;
         $group_id       = $request->group_id;
-        $area_id        = $request->area_id;
-        $division_id    = $request->division_id;
         $password       = $request->password;
         $message        = '';
 
@@ -200,8 +194,6 @@ class ProfileController extends Controller
                     'phone'         => $phone,
                     'birth_of_date' => $birth_of_date,
                     'address'       => $address,
-                    'area_id'       => $area_id,
-                    'division_id'   => $division_id,
                     'group_id'      => $group_id
                 ]);
             }
@@ -214,8 +206,6 @@ class ProfileController extends Controller
                     'phone'         => $phone,
                     'birth_of_date' => $birth_of_date,
                     'address'       => $address,
-                    'area_id'       => $area_id,
-                    'division_id'   => $division_id,
                     'group_id'      => $group_id,
                     'password'      => Hash::make($password)
                 ]);

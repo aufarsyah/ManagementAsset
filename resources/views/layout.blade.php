@@ -54,10 +54,13 @@
 				<!--begin::Aside-->
 				<div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
 					<!--begin::Brand-->
-					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
+					<div class="aside-logo flex-column-auto align-items-left" id="kt_aside_logo">
 						<!--begin::Logo-->
 						<a href="/dashboard">
-							<img alt="Logo" src="assets/media/logos/instlogo.svg" class="h-35px logo" />
+							<img alt="Logo" src="assets/media/logos/instlogo.svg" class="h-40px logo" />
+							<img alt="Logo" src="assets/media/logos/64-logo-white.png" class="h-40px logo" />
+							<!-- <span class="fw-bold fs-6 text-white logo">MANAGEMENT ASSET</span> -->
+
 						</a>
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
@@ -274,8 +277,10 @@
 							<!--begin::Mobile logo-->
 							<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
 								<a href="/dashboard" class="d-lg-none">
-									<img alt="Logo" src="assets/media/logos/instlogo.svg" class="h-35px" />
+									<!-- <img alt="Logo" src="assets/media/logos/instlogo.svg" class="h-35px" /> -->
+									<img alt="Logo" src="assets/media/logos/64-logo-blue.png" class="h-40px logo" />
 								</a>
+								<span class="menu-title fw-bold fs-1">MANAGEMENT ASSET</span>
 							</div>
 							<!--end::Mobile logo-->
 							<!--begin::Wrapper-->

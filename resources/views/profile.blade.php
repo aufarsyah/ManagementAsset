@@ -199,46 +199,6 @@
             });
         }
 
-        function initSelectArea() {
-
-            var select = $('#select_area');
-
-            $.ajax({
-                dataType: 'JSON',
-                type: 'GET',
-                url: '/area/all',
-                success: function (data) {
-
-                    $.each(data, function (index, item) {
-                        select.append($('<option>', { 
-                            value: item.id,
-                            text : item.name 
-                        }));
-                    });
-                }
-            });
-        }
-
-        function initSelectDivision() {
-
-            var select = $('#select_division');
-
-            $.ajax({
-                dataType: 'JSON',
-                type: 'GET',
-                url: '/division/all',
-                success: function (data) {
-
-                    $.each(data, function (index, item) {
-                        select.append($('<option>', { 
-                            value: item.id,
-                            text : item.name 
-                        }));
-                    });
-                }
-            });
-        }
-
         function initTable(){
 
             var dateNow = '{{ now() }}';
@@ -261,10 +221,7 @@
                     var address             = data[0].address;
                     var group_id            = data[0].group_id;
                     var group_name          = data[0].group_name;
-                    var area_id             = data[0].area_id;
                     var area_name           = data[0].area_name;
-                    var division_id         = data[0].division_id;
-                    var division_name       = data[0].division_name;
 
                     $('#user_id').val(id);
                     $('#employee_number').val(employee_number);
@@ -275,8 +232,6 @@
                     $('#birth_of_date').val(birth_of_date);
                     $('#address').val(address);
                     $('#select_group').val(group_id).change();
-                    $('#select_area').val(area_id).change();
-                    $('#select_division').val(division_id).change();
                     
                 }
             });
@@ -287,8 +242,6 @@
 
 			initTable();
             initSelectGroup();
-            initSelectArea();
-            initSelectDivision();
 		});
 
         // Class definition
@@ -446,16 +399,12 @@
                             var employee_number = $('#employee_number').val();
                             var email = $('#email').val();
                             var group_id = $('#select_group').val();
-                            var area_id = $('#select_area').val();
-                            var division_id = $('#select_division').val();
                             var user_id = $('#user_id').val();
 
                             formData.append('employee_number', employee_number);
                             formData.append('email', email);
                             formData.append('user_id', user_id);
                             formData.append('group_id', group_id);
-                            formData.append('area_id', area_id);
-                            formData.append('division_id', division_id);
 
                             for(var pair of formData.entries()) {
                                 //console.log(pair[0]+ ', '+ pair[1]);
