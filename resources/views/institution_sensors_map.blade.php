@@ -40,7 +40,7 @@
 				<!--begin::Actions-->
 				<div class="d-flex align-items-center py-1">
 					<!--begin::Button-->
-					<a class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_area" id="btn_area_add">Create</a>
+					<!-- <a class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_area" id="btn_area_add">Create</a> -->
 					<!--end::Button-->
 				</div>
 				<!--end::Actions-->

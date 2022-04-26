@@ -69,33 +69,34 @@ Route::middleware(['checkSession', 'auditTrail'])->group(function () {
         'update' => 'profile_setup_update'
     ]]);
 
-    Route::resource('/institution', InstitutionController::class, ['names' => [
-        'index' => 'institution_setup',
-        'show' => 'institution_setup_read',
-        'store' => 'institution_setup_create',
-        'update' => 'institution_setup_update',
-        'destroy' => 'institution_setup_delete'
-    ]]);
-
-    Route::resource('/sensors', SensorsController::class, ['names' => [
-        'index' => 'sensors_setup',
-        'show' => 'sensors_setup_read',
-        'store' => 'sensors_setup_create',
-        'update' => 'sensors_setup_update',
-        'destroy' => 'sensors_setup_delete'
-    ]]);
-
-    Route::resource('/institution_sensors', InstitutionSensorsController::class, ['names' => [
-        'index' => 'institution_sensors_setup',
-        'show' => 'institution_sensors_setup_read',
-        'store' => 'institution_sensors_setup_create',
-        'update' => 'institution_sensors_setup_update',
-        'destroy' => 'institution_sensors_setup_delete'
-    ]]);
 
     Route::get('/institution_sensors_map', [InstitutionSensorsController::class, 'index_map']);
 
     Route::middleware(['checkPrivilege'])->group(function () {
+        
+        Route::resource('/institution', InstitutionController::class, ['names' => [
+            'index' => 'institution_setup',
+            'show' => 'institution_setup_read',
+            'store' => 'institution_setup_create',
+            'update' => 'institution_setup_update',
+            'destroy' => 'institution_setup_delete'
+        ]]);
+
+        Route::resource('/sensors', SensorsController::class, ['names' => [
+            'index' => 'sensors_setup',
+            'show' => 'sensors_setup_read',
+            'store' => 'sensors_setup_create',
+            'update' => 'sensors_setup_update',
+            'destroy' => 'sensors_setup_delete'
+        ]]);
+
+        Route::resource('/institution_sensors', InstitutionSensorsController::class, ['names' => [
+            'index' => 'institution_sensors_setup',
+            'show' => 'institution_sensors_setup_read',
+            'store' => 'institution_sensors_setup_create',
+            'update' => 'institution_sensors_setup_update',
+            'destroy' => 'institution_sensors_setup_delete'
+        ]]);
 
         Route::resource('/user', UserController::class, ['names' => [
             'index' => 'user_setup',

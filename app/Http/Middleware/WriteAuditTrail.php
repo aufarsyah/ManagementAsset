@@ -40,52 +40,28 @@ class WriteAuditTrail
             
             $username = Session::get('username');
 
-            if ($request->isMethod('post')) {
+            if ($request->isMethod('get')) {
                 
-                $data = $request->all();
-
-                foreach ($data as $key => $value) {
-                    
-                    if ($key != '_method' && $key != '_token') {
-                        
-                        $details .= $key . ' : ' . $value;
-                    }
-                }
-            }
-            else if ($request->isMethod('patch')) {
-                            
-                $id = $arr_path[1];
-
-                $data = $request->all();
-
-                foreach ($data as $key => $value) {
-                    
-                    if ($key != '_method' && $key != '_token') {
-                        
-                        $details .= $key . ' : ' . $value;
-                    }
-                }
-            }
-            else if ($request->isMethod('delete')) {
-                
-                $id = $arr_path[1];
-
-                $data = $request->all();
-
-                foreach ($data as $key => $value) {
-                    
-                    if ($key != '_method' && $key != '_token') {
-                        
-                        $details .= $key . ' : ' . $value;
-                    }
-                }
+                $details = 'Access ' . $object . ' menu';
             }
             else{
 
-                $details = 'Access ' . $object . ' menu';
+                $data = $request->all();
+
+                foreach ($data as $key => $value) {
+                    
+                    if ($key != '_method' && $key != '_token') {
+                        
+                        $details .= $key . ' : ' . $value . '<br>';
+                    }
+                }
+
             }
 
-            if (count($arr_path) == 1) {
+            if ($request->isMethod('get') && count($arr_path) > 1) {
+                // do nothing
+            }
+            else{
                 
                 $create_data = AuditTrail::create([
                     'username' => $username,
@@ -93,6 +69,7 @@ class WriteAuditTrail
                     'details'  => $details
                 ]);
             }
+                
         }
 
         return $response;

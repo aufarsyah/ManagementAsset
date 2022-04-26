@@ -39,11 +39,11 @@ class UserController extends Controller
     public function show($id)
     {
 
-        $data_user = User::find($id);
+        //$data_user = User::find($id);
 
-        $group_name = $data_user->group->name;
+        //$group_name = $data_user->group->name;
 
-        if ($group_name == 'Superadmin') {
+        if ($id == 'all') {
             
             $data_user = User::select(
                             'users.*', 
@@ -57,7 +57,11 @@ class UserController extends Controller
         }
         else {
 
-            $data_user = User::find($id)->get();
+            $data_user = User::select(
+                            'users.*', 
+                            'group.name as group_name')
+                        ->join('group', 'group.id', '=', 'group_id')
+                        ->where('users.id', '=', $id)->get();
         }
 
         return response($data_user);

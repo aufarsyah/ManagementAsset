@@ -65,7 +65,7 @@
     							    <thead>
     							        <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
                                             <th class="d-none"></th>
-    							            <th class="min-w-80px">Employee Number</th>
+    							            <th class="min-w-80px">Username</th>
     							            <th class="min-w-80px">First Name</th>
     							            <th class="min-w-80px">Last Name</th>
     							            <!-- <th class="min-w-80px">Email</th> -->
@@ -280,7 +280,7 @@
 	        $.ajax({
 	            dataType: 'JSON',
 	            type: 'GET',
-	            url: '/user/'+user_id,
+	            url: '/user/all',
 	            success: function (data) {
 
 	                //console.log(data);
@@ -305,7 +305,7 @@
 	                    var element =
 	                        //'<td>'+ (i + 1) +'</td>' +
                             '<td data-id="'+id+'" class="d-none"></td>' +
-	                        '<td data-employee_number="'+employee_number+'">'+employee_number+'</td>' +
+	                        '<td data-employee_number="'+employee_number+'" class="d-none">'+employee_number+'</td>' +
 	                        '<td data-username="'+username+'">'+username+'</td>' +
 	                        '<td data-first_name="'+first_name+'">'+first_name+'</td>' +
 	                        '<td data-last_name="'+last_name+'">'+last_name+'</td>' +
@@ -324,7 +324,11 @@
 
 	                    if (priv_user_delete) {
 
-		                    element+= '<a class="btn btn-icon btn-danger" id="btn_user_delete" onClick="deleteClick(this)"><i class="bi bi-trash fs-4"></i></a>';
+	                    	if (id != user_id) {
+	                    		
+			                    element+= '<a class="btn btn-icon btn-danger" id="btn_user_delete" onClick="deleteClick(this)"><i class="bi bi-trash fs-4"></i></a>';
+	                    	}
+
 	                    } 
 
                         if (!priv_user_update && !priv_user_delete) {

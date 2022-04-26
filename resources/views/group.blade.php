@@ -253,7 +253,13 @@
 
 	                    if (priv_group_delete) {
 
-	                    element+= '<a class="btn btn-icon btn-danger" id="btn_group_delete" onClick="deleteClick(this)"><i class="bi bi-trash fs-4"></i></a>';
+	                    	if (id > 1) {
+
+		                    	if (id != group_id) {
+
+			                    	element+= '<a class="btn btn-icon btn-danger" id="btn_group_delete" onClick="deleteClick(this)"><i class="bi bi-trash fs-4"></i></a>';
+		                    	}
+	                    	}
 	                	} 
 
                         if (!priv_group_update && !priv_group_delete) {

@@ -270,6 +270,9 @@
                         var serial_number       = data[i].serial_number;
 	                  	var expired_date        = data[i].expired_date;
 
+                        serial_number = !serial_number ? '-' : serial_number;
+                        expired_date = !expired_date ? '-' : expired_date;
+
 	                    var element =
 	                        //'<td>'+ (i + 1) +'</td>' +
                             '<td data-id="'+id+'" class="d-none"></td>' +

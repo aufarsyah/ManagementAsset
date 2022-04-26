@@ -280,7 +280,7 @@
 									<!-- <img alt="Logo" src="assets/media/logos/instlogo.svg" class="h-35px" /> -->
 									<img alt="Logo" src="assets/media/logos/64-logo-blue.png" class="h-40px logo" />
 								</a>
-								<span class="menu-title fw-bold fs-1">MANAGEMENT ASSET</span>
+								<span class="menu-title fw-bolder fs-1">MANAGEMENT ASSET - DIT64</span>
 							</div>
 							<!--end::Mobile logo-->
 							<!--begin::Wrapper-->

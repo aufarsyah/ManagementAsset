@@ -6,6 +6,7 @@ use Closure;
 use Session;
 use Illuminate\Http\Request;
 use App\Models\Group;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 class CheckSession
@@ -31,7 +32,34 @@ class CheckSession
         } else {
 
             //refresh privilege
+            $user_id = Session::get('user_id');
             $group_id = Session::get('group_id');
+
+            $data_user = User::select(
+                            'users.*', 
+                            'group.name as group_name')
+                        ->join('group', 'group.id', '=', 'group_id')
+                        ->where('users.id', '=', $user_id)->first();
+
+            $user_id = $data_user->id;
+            $username = $data_user->username;
+            $email = $data_user->email;
+            $employee_number = $data_user->employee_number;
+            $first_name = $data_user->first_name;
+            $last_name = $data_user->last_name;
+            $group_id = $data_user->group_id;
+            $group_name = $data_user->group_name;
+
+            session([
+                    'user_id'           => $user_id,
+                    'group_id'          => $group_id,
+                    'group_name'        => $group_name,
+                    'first_name'        => $first_name,
+                    'last_name'         => $last_name,
+                    'email'             => $email,
+                    'username'          => $username,
+                    'employee_number'   => $employee_number
+                ]);
                 
             $count_privilege = Group::find($group_id)->privilege()->count();
             

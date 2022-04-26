@@ -203,6 +203,8 @@
 
             var dateNow = '{{ now() }}';
 
+            console.log(user_id);
+
             $.ajax({
                 dataType: 'JSON',
                 type: 'GET',

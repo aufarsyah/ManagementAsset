@@ -61,7 +61,7 @@
     					<!--begin::Wrapper-->
     					<div class="card-px py-10">
     						<div class="table-responsive">
-    							<table id="table_area" class="table table-rounded table-striped border gy-7 gs-7">
+    							<table id="table_data" class="table table-rounded table-striped border gy-7 gs-7">
     							    <thead>
     							        <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
                                             <th class="d-none"></th>
@@ -151,10 +151,48 @@
             },
             buttonsStyling: false
         });	
+
+        var table = $('#table_data').DataTable({
+                            "language": {
+                            "lengthMenu": "Show _MENU_",
+                        },
+                        "dom":
+                            "<'row'" +
+                            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                            ">" +
+
+                            "<'table-responsive'tr>" +
+
+                            "<'row'" +
+                            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                            ">"
+                        });
+
   
 		function initTable()
 	    {
-	        var table = $('#table_area').DataTable();
+	        table.destroy();
+
+            table = $('#table_data').DataTable({
+                            "language": {
+                            "lengthMenu": "Show _MENU_",
+                        },
+                        "dom":
+                            "<'row'" +
+                            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                            ">" +
+
+                            "<'table-responsive'tr>" +
+
+                            "<'row'" +
+                            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                            ">"
+                        });
+            
 	        var dateNow = '{{ now() }}';
 
 	        $.ajax({
